@@ -1,9 +1,11 @@
 import './App.scss';
+import MyComponent from './example/MyComponent';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <MyComponent />
         <p>
 			Hello world react class
         </p>
