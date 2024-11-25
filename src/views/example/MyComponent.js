@@ -1,5 +1,6 @@
 import React from "react";
 import ChildComponent from "./ChildComponent";
+import AddComponent from "./AddComponent";
 
 class MyComponent extends React.Component {
     state = {
@@ -8,42 +9,10 @@ class MyComponent extends React.Component {
         isShow: true,
     };
 
-    handleFirstName = (event) => {
-        this.setState({
-            firstName: event.target.value,
-        });
-    };
-
-    handleLastName = (event) => {
-        this.setState({
-            lastName: event.target.value,
-        });
-    };
-
-    handleShowData = (e) => {
-        this.setState({
-            isShow: !this.state.isShow,
-        });
-    };
     render() {
         return (
             <>
-                <form>
-                    <label>First name</label>
-                    <input
-                        type="text"
-                        value={this.state.firstName}
-                        onChange={this.handleFirstName}
-                    />
-                    <label>Last name</label>
-                    <input
-                        type="text"
-                        value={this.state.lastName}
-                        onChange={this.handleLastName}
-                    />
-
-                    <button type="submit">Submit</button>
-                </form>
+                <AddComponent />
                 {this.state.isShow === false ? (
                     <button onClick={this.handleShowData}>Show</button>
                 ) : (
