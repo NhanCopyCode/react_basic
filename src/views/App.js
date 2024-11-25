@@ -7,7 +7,6 @@ function App() {
       <header className="App-header">
         <MyComponent />
         <p>
-			Hello world react class
         </p>
         <a
           className="App-link"

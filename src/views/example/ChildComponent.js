@@ -2,25 +2,25 @@ import React from "react";
 
 class ChildComponent extends React.Component {
     state = {
-        firstName: "",
-        lastName: "",
-    };
-
-    handleFirstName = (event) => {
-        this.setState({
-            firstName: event.target.value,
-        });
-    };
-
-    handleLastName = (event) => {
-        this.setState({
-            lastName: event.target.value,
-        });
-    };
+        isShow: true,
+    }
+  
     render() {
+        const { arrJobs } = this.props;
+        console.log("arr job", arrJobs);
         return (
             <>
-               <h1>This is child component : {this.props.name}</h1>
+                <p>This is child component : {this.props.name}</p>
+                {arrJobs.map((item, index) => {
+                    if (item.salary >= 2000) {
+                        return (
+                            <div key={item.id}>
+                                This is {item.name} - and his salary{" "}
+                                {item.salary}
+                            </div>
+                        );
+                    }
+                })}
             </>
         );
     }
