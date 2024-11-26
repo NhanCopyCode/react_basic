@@ -3,23 +3,25 @@ import React from "react";
 class ChildComponent extends React.Component {
     state = {
         isShow: true,
-    }
-  
+    };
+
+    handleRemoveJob = (job) => {
+        this.props.handleRemoveJob(job);
+    };
     render() {
         const { arrJobs } = this.props;
-        console.log("arr job", arrJobs);
+        console.log("arr job", this.props);
         return (
             <>
-                <p>This is child component : {this.props.name}</p>
                 {arrJobs.map((item, index) => {
-                    if (item.salary >= 2000) {
-                        return (
-                            <div key={item.id}>
-                                This is {item.name} - and his salary{" "}
-                                {item.salary}
-                            </div>
-                        );
-                    }
+                    return (
+                        <div key={item.id}>
+                            This is {item.name} - and his salary {item.salary}
+                            <button onClick={() => this.handleRemoveJob(item)}>
+                                Remove job
+                            </button>
+                        </div>
+                    );
                 })}
             </>
         );

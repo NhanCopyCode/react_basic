@@ -19,8 +19,22 @@ class AddComponent extends React.Component {
 
     handleSubmitForm = (e) => {
         e.preventDefault();
-        console.log(">>>>chekc data: ", this.state);
-        
+        if(this.state.titleJob === '' || this.state.salary === '') {
+            alert('No data to add');
+            return;
+        }
+        const newJob = {
+            id: Math.floor(Math.random() * 10000),
+            name: "Thành Nhân " + Math.floor(Math.random() * 1000),
+            job: this.state.titleJob,
+            salary: this.state.salary,
+        };
+        this.props.addNewJob(newJob);
+
+        this.setState({
+            titleJob: '',
+            salary: '',
+        })
     }
 
     render() {
@@ -30,16 +44,16 @@ class AddComponent extends React.Component {
                 <input
                     type="text"
                     value={this.state.titleJob}
-                    onChange={this.handleTitleJob}
+                    onChange={(e) => this.handleTitleJob(e)}
                 />
                 <label>Salary</label>
                 <input
                     type="text"
                     value={this.state.salary}
-                    onChange={this.handleSalary}
+                    onChange={(e) => this.handleSalary(e)}
                 />
 
-                <button type="submit" onClick={this.handleSubmitForm}>
+                <button type="submit" onClick={(e) => this.handleSubmitForm(e)}>
                     Submit
                 </button>
             </form>
