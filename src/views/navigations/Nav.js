@@ -1,16 +1,31 @@
 import React from "react";
-import './Nav.scss';
+import "./Nav.scss";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    NavLink,
+    useParams,
+    useRouteMatch,
+} from "react-router-dom";
 
 class Nav extends React.Component {
     render() {
         return (
-            <div class="topnav">
-                <a class="active" href="#home">
+            <div className="topnav">
+                <NavLink
+                    to="/"
+                    exact
+                    activeClassName="active-1 active"
+                >
                     Home
-                </a>
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
+                </NavLink>
+                <NavLink to="/form-todo" activeClassName="active-1 active">
+                    Todo
+                </NavLink>
+                <NavLink to="/component" activeClassName="active-1 active">
+                    MyComponent
+                </NavLink>
             </div>
         );
     }
