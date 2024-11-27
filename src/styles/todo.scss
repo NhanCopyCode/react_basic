@@ -1,0 +1,34 @@
+@import url('./reset.scss');
+
+body {
+    background-color: #ccc;
+}
+ul {
+    padding: 0;
+}
+
+.App{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    #todo-app {
+        border: 1px solid #000;
+        width: 700px;
+        padding: 20px 40px;
+        header {
+            font-size: 24px;
+            font-weight: bold;
+            color: blue;
+            text-decoration: underline;
+        }
+        .form-add-new-todo {
+           button {
+             top: 0;
+             right: 0;
+           }
+
+        }
+    }
+    
+}

@@ -1,24 +1,19 @@
-import './App.scss';
-import MyComponent from './example/MyComponent';
+// import './App.scss';
+import FormAddTodo from "./todos/FormAddTodo";
+import "../styles/todo.scss";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Nav from "./navigations/Nav";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <MyComponent />
-        <p>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React from begining
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Nav />
+            <FormAddTodo />
+            <ToastContainer />
+        </div>
+    );
 }
 
 export default App;
