@@ -13,11 +13,7 @@ class Nav extends React.Component {
     render() {
         return (
             <div className="topnav">
-                <NavLink
-                    to="/"
-                    exact
-                    activeClassName="active-1 active"
-                >
+                <NavLink to="/" exact activeClassName="active-1 active">
                     Home
                 </NavLink>
                 <NavLink to="/form-todo" activeClassName="active-1 active">
@@ -25,6 +21,9 @@ class Nav extends React.Component {
                 </NavLink>
                 <NavLink to="/component" activeClassName="active-1 active">
                     MyComponent
+                </NavLink>
+                <NavLink to="/user" activeClassName="active-1 active">
+                    User
                 </NavLink>
             </div>
         );
